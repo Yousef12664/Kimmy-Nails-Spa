@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kimmy Nails & Spa | Scarborough</title>
+  <meta name="description" content="Kimmy Nails & Spa in Scarborough, Ontario. Manicures, pedicures, gel and acrylic nails, nail art, and beauty care." />
+  <style>
+    :root{
+      --bg1:#fff7f8;
+      --bg2:#fffdf8;
+      --card:#ffffff;
+      --text:#2e2a2a;
+      --muted:#6f6666;
+      --accent:#d94c72;
+      --accent-dark:#b9385b;
+      --line:#f0d8df;
+      --soft:#fde9ee;
+      --shadow:0 12px 32px rgba(217,76,114,.12);
+      --radius:24px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(to bottom,var(--bg1),#fff,var(--bg2));
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 0;
+    }
+    .brand h1{margin:0;font-size:22px;color:var(--accent)}
+    .brand p{margin:2px 0 0;color:var(--muted);font-size:14px}
+    .nav-links{display:flex;gap:24px;font-size:14px}
+    .nav-links a:hover{color:var(--accent)}
+    .hero{
+      padding:72px 0;
+      background:
+        radial-gradient(circle at top right, rgba(217,76,114,.12), transparent 30%),
+        radial-gradient(circle at left, rgba(255,204,120,.18), transparent 25%);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;
+    }
+    .pill{
+      display:inline-block;padding:8px 14px;border:1px solid var(--line);
+      border-radius:999px;background:#fff;color:var(--accent);font-size:14px;
+      box-shadow:var(--shadow);
+    }
+    .hero h2{
+      margin:18px 0 12px;
+      font-size:56px;line-height:1.08;
+    }
+    .hero p.lead{font-size:18px;color:var(--muted);max-width:640px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-block;padding:14px 22px;border-radius:18px;font-weight:700;
+      transition:.2s ease;cursor:pointer
+    }
+    .btn-primary{
+      background:var(--accent);color:#fff;box-shadow:var(--shadow);
+    }
+    .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+    .btn-secondary{
+      border:1px solid #d9d0d0;background:#fff;color:var(--text)
+    }
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:24px;box-shadow:var(--shadow);
+    }
+    .card small{
+      display:block;text-transform:uppercase;letter-spacing:.16em;color:#9a8f8f;font-size:12px
+    }
+    .card h3{margin:10px 0 6px;font-size:20px}
+    .card p{margin:0;color:var(--muted)}
+    .why{
+      grid-column:1 / -1;
+    }
+    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .mini{
+      padding:16px;border-radius:18px;background:var(--soft)
+    }
+    .mini h4{margin:0 0 6px;font-size:16px}
+    .mini p{margin:0;font-size:14px}
+    section{padding:70px 0}
+    .section-head{text-align:center;margin-bottom:34px}
+    .section-head .tag{
+      text-transform:uppercase;letter-spacing:.22em;color:var(--accent);
+      font-size:13px;font-weight:700
+    }
+    .section-head h3{margin:10px 0 8px;font-size:40px}
+    .section-head p{margin:0 auto;max-width:760px;color:var(--muted)}
+    .services{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    }
+    .service{
+      background:#fff;border:1px solid #eee3e6;border-radius:var(--radius);
+      padding:24px;box-shadow:0 6px 20px rgba(0,0,0,.04)
+    }
+    .service-icon{
+      width:48px;height:48px;border-radius:16px;background:var(--soft);margin-bottom:14px
+    }
+    .service h4{margin:0 0 10px;font-size:22px}
+    .service p{margin:0;color:var(--muted)}
+    .hours-wrap{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:26px;align-items:start
+    }
+    .hours-card{
+      background:#fff;border:1px solid #eee3e6;border-radius:var(--radius);
+      padding:24px;box-shadow:var(--shadow)
+    }
+    .hours-row{
+      display:flex;justify-content:space-between;gap:20px;padding:12px 0;
+      border-bottom:1px solid #f2eeee
+    }
+    .hours-row:last-child{border-bottom:none}
+    .contact-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px
+    }
+    .contact-panel{
+      background:var(--accent);color:#fff;border-radius:var(--radius);
+      padding:28px;box-shadow:var(--shadow)
+    }
+    .contact-panel p{color:#ffeef3}
+    .map-wrap{
+      border:1px solid #eee3e6;background:#fff;border-radius:var(--radius);
+      padding:12px;box-shadow:var(--shadow)
+    }
+    iframe{width:100%;height:420px;border:0;border-radius:18px}
+    footer{
+      border-top:1px solid #eee3e6;background:#fff;color:var(--muted)
+    }
+    .footer-inner{
+      display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font-size:14px
+    }
+    @media (max-width: 960px){
+      .hero-grid,.hours-wrap,.contact-grid,.services{grid-template-columns:1fr 1fr}
+      .hero h2{font-size:44px}
+    }
+    @media (max-width: 720px){
+      .nav-links{display:none}
+      .hero-grid,.hours-wrap,.contact-grid,.services,.card-grid,.mini-grid{grid-template-columns:1fr}
+      .hero{padding:52px 0}
+      .hero h2{font-size:36px}
+      .section-head h3{font-size:32px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <h1>Kimmy Nails &amp; Spa</h1>
+        <p>Scarborough, Ontario</p>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">Beauty • Relaxation • Self-Care</span>
+          <h2>Feel polished, refreshed, and confident.</h2>
+          <p class="lead">
+            Welcome to Kimmy Nails &amp; Spa, your local destination for beautiful nails,
+            relaxing treatments, and friendly service in Scarborough.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:6473454418">Call to Book</a>
+            <a class="btn btn-secondary" href="https://maps.google.com/?q=1703+Victoria+Park+Ave,+Scarborough,+ON+M1R+1R9" target="_blank" rel="noopener noreferrer">Get Directions</a>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <small>Location</small>
+            <h3>1703 Victoria Park Ave</h3>
+            <p>Scarborough, ON M1R 1R9</p>
+          </div>
+          <div class="card">
+            <small>Phone</small>
+            <h3>647-345-4418</h3>
+            <p>Appointments welcome</p>
+          </div>
+          <div class="card why">
+            <small>Why clients choose us</small>
+            <div class="mini-grid">
+              <div class="mini">
+                <h4>Clean &amp; Comfortable</h4>
+                <p>A welcoming space for your next self-care visit.</p>
+              </div>
+              <div class="mini">
+                <h4>Quality Service</h4>
+                <p>Careful attention to detail in every treatment.</p>
+              </div>
+              <div class="mini">
+                <h4>Local Favorite</h4>
+                <p>Conveniently located on Victoria Park Ave.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="tag">Services</div>
+          <h3>Treatments tailored to your style</h3>
+          <p>
+            From everyday maintenance to special-occasion glam, Kimmy Nails &amp; Spa offers beauty
+            services designed to help you look and feel your best.
+          </p>
+        </div>
+
+        <div class="services">
+          <div class="service">
+            <div class="service-icon"></div>
+            <h4>Manicures &amp; Pedicures</h4>
+            <p>Classic care for hands and feet with relaxing treatments and polished finishes.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"></div>
+            <h4>Gel &amp; Acrylic Nails</h4>
+            <p>Long-lasting sets, extensions, refills, and custom looks designed to match your style.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"></div>
+            <h4>Nail Art</h4>
+            <p>Minimal, elegant, or bold nail art to help you stand out for any occasion.</p>
+          </div>
+          <div class="service">
+            <div class="service-icon"></div>
+            <h4>Waxing &amp; Beauty Care</h4>
+            <p>Convenient beauty services to help you leave feeling refreshed and confident.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hours" style="background:rgba(255,255,255,.75)">
+      <div class="container hours-wrap">
+        <div>
+          <div class="tag" style="text-transform:uppercase;letter-spacing:.22em;color:var(--accent);font-size:13px;font-weight:700">Hours</div>
+          <h3 style="margin:10px 0 10px;font-size:40px">Visit us during the week or on the weekend</h3>
+          <p style="color:var(--muted);max-width:560px">
+            Book ahead for the smoothest experience, especially during busy periods and weekends.
+          </p>
+        </div>
+
+        <div class="hours-card">
+          <div class="hours-row"><strong>Monday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Tuesday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Wednesday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Thursday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Friday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Saturday</strong><span>9:30 AM – 8:00 PM</span></div>
+          <div class="hours-row"><strong>Sunday</strong><span>12:00 PM – 5:00 PM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="contact-panel">
+          <div style="text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;color:#ffe4ec">Contact</div>
+          <h3 style="margin:10px 0 10px;font-size:38px;line-height:1.15">Ready to book your next appointment?</h3>
+          <p>Call Kimmy Nails &amp; Spa to schedule your visit or stop by the salon at our Scarborough location.</p>
+          <p><strong>Phone:</strong> 647-345-4418</p>
+          <p><strong>Address:</strong> 1703 Victoria Park Ave, Scarborough, ON M1R 1R9</p>
+          <div class="actions">
+            <a class="btn" style="background:#fff;color:var(--accent)" href="tel:6473454418">Call Now</a>
+            <a class="btn" style="border:1px solid rgba(255,255,255,.5);color:#fff" href="https://maps.google.com/?q=1703+Victoria+Park+Ave,+Scarborough,+ON+M1R+1R9" target="_blank" rel="noopener noreferrer">Open Map</a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            title="Kimmy Nails & Spa Location"
+            src="https://www.google.com/maps?q=1703+Victoria+Park+Ave,+Scarborough,+ON+M1R+1R9&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Kimmy Nails &amp; Spa. All rights reserved.</div>
+      <div>Designed for a clean, modern salon web presence.</div>
+    </div>
+  </footer>
+</body>
+</html>
